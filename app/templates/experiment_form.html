@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- A navbar -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">Data Form</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="{{url_for('index')}}">Go Back</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="mt-3">
+
+    <!-- Form -->
+    <main class="mt-3">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-4">
+
+                    <form method="post" novalidate>
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+
+                            {{ form.age.label }}<br>
+                            {{ form.age(list="id_datalist1") }}
+                            <datalist id="id_datalist1">
+                                {% for age in ages %}
+                                <option value={{ age }}>
+                                    {% endfor %}
+                            </datalist>
+
+                        </div>
+                        <div class="form-group">
+
+                            {{ form.gender.label }}<br>
+                            {{ form.gender(list="id_datalist2") }}
+                            <datalist id="id_datalist2">
+                                {% for gender in genders %}
+                                <option value={{ gender }}>
+                                    {% endfor %}
+                            </datalist>
+
+                        </div>
+
+                        {% for message in get_flashed_messages() %}
+                        <p class="mt-3" , style="color: red;">{{ message }}</p>
+                        {% endfor %}
+
+                        <p class="mt-2">By clicking either <i>submit</i> or <i>ignore</i> I consent to have my
+                            behaviours tracked in the following experiement.</p>
+
+                        {{ form.submit(class_="form-control") }}
+
+                    </form>
+
+                    <a href="{{ url_for('experiment') }}" class="btn btn-primary mt-3">Ignore</a>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</main>
+
+{% endblock %}

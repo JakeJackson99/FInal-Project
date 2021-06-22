@@ -1,0 +1,5 @@
+.take-part {
+    margin: auto;
+    width: 15%;
+    margin-top: 60px;
+}

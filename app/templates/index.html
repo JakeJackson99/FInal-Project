@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- A navbar -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand">Home Page</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="{{url_for('admin_login')}}">Dashboard</a>
+            </div>
+        </div>
+        <a href="{{ url_for('experiment_form') }}" class="btn btn-primary" role="button">Take Part</a>
+    </div>
+</nav>
+
+<main class="mt-3">
+
+    <!-- Jumbotron -->
+    <div class="container">
+        <div class="bg-light p-5 rounded-lg m-3">
+            <h1>Hello</h1>
+            <p class="lead">This is a testing framkework for testing user behaviours with endless scrolling feeds vs
+                discrete
+                scrolling feeds. It was created as part of my final-year Full-Unit project @ Royal Holloway, Universty
+                of London.</p>
+            <hr class="my-4">
+            <p>Jake Jackson [100898455]</p>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

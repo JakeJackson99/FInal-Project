@@ -1,0 +1,23 @@
+This is the parent directory, which includes:
+- .flaskenv -> stores envirnment variables for the app
+- app.db -> the database
+- config.py -> configuration file for the app
+- requirements.txt -> the requied packages (installed in the env)
+- run.py -> runs the app
+- app/
+    - __init__.py -> initial file for Python projects
+    - forms.py -> the forms used in the program
+    - models.py -> the models used in the database
+    - routes.py -> the routes used in the web app
+    - static/ -> JavaScript code relevant to their names
+        - dashboard.js
+        - experiment.js
+    - templates/ -> HTML pages relevant to their names
+        - admin_login.html
+        - base.html -> HTML code each page extends
+        - dashboard.html
+        - experiment_form.html
+        - experiment.html
+        - index.html
+- env/ -> the virtual envirnment
+- migrations/ -> migrations for the database, Flask-Migrate
